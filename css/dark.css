@@ -1,0 +1,490 @@
+/* Dark Mode Toggle */
+
+@media screen and (min-width: 0px) {
+
+    /* Dark Mode Toggle */
+    
+    :root {
+        --dark: #121212;
+        --medium: #292929;
+        --light: #3c3c3c;
+    }
+    
+    .dark-mode-group {
+        position: absolute;
+        top: -340px;
+        right: 15px;
+        width: 80px;
+        height: 470px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+    }
+    
+    .dark-mode-group p {
+        font-size: .7em !important;
+        text-align: center;
+        color: #fff;
+    }
+    
+    .dark-toggle {
+        margin: 0;
+        width: 30px;
+        height: 16px;
+        z-index: 20;
+        border-radius: 10px;
+        background: transparent;
+        border: 3px solid #fff;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-transition: .3s ease;
+        -o-transition: .3s ease;
+        transition: .3s ease;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        z-index: 1000;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        align-items: center;
+        -webkit-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+                transform: rotate(90deg);
+    }
+    
+    .dark-toggle span {
+        height: 20px;
+        width: 20px;
+        left: -8px;
+        margin: 0;
+        border-radius: 50%;
+        background: #fff;
+        position: absolute;
+        -webkit-transition: .3s ease;
+        -o-transition: .3s ease;
+        transition: .3s ease;
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    }
+     
+    .top-dark-mode-button {
+        position: absolute;
+        top: 5px;
+        left: 25px;
+        -webkit-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+        z-index: 1000;
+        -webkit-transition: .3s ease-in;
+        -o-transition: .3s ease-in;
+        transition: .3s ease-in;
+        z-index: 1001;
+    }
+    
+    .top-dark-mode-button:after {
+        content: 'DARK';
+        position: absolute;
+        color: #fff;
+        -webkit-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+                transform: rotate(90deg);
+        right: 22px;
+        top: 10px;
+        -webkit-transition: .1s ease-in;
+        -o-transition: .1s ease-in;
+        transition: .1s ease-in;
+    }
+    
+    body.dark-mode .top-dark-mode-button:after {
+        content: 'LIGHT';
+        color: #fff;
+        top: 12px;
+    }
+    
+    .top-dark-mode-button .dark-toggle {
+        background: rgb(230, 230, 230);
+        border-color: rgb(230, 230, 230);
+        -webkit-box-shadow: 0px 15px 5px -8px rgba(0,132,53,.5);
+                box-shadow: 0px 15px 5px -8px rgba(0,132,53,.5);
+        width: 35px;
+    }
+    
+    .dark-mode-button {
+        background: transparent;
+        border: none;
+        height: 40px;
+        width: 30px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+    }
+    
+    body.dark-mode .dark-toggle {
+        background: var(--primary);
+        border: none;
+    }
+    
+    body.dark-mode .dark-toggle span {
+        left: 15px;
+        -webkit-transition: .3s ease;
+        -o-transition: .3s ease;
+        transition: .3s ease;
+    }
+    
+    /* Navigation */
+    body.dark-mode .navbar-menu {
+        background: #222 ;	
+        background: -o-linear-gradient(#222, var(--dark));	
+        background: -webkit-gradient(linear, left top, left bottom, from(#222), to(var(--dark)));	
+        background: linear-gradient(#222, var(--dark));	
+    }
+    
+    .dark {
+        display: none;
+    }
+    
+    body.dark-mode .dark {
+        display: block;
+    }
+    
+    body.dark-mode .light {
+        display: none;
+    }
+    
+    body.dark-mode .side-nav a {
+        color: #fff;
+    }
+    
+    body.dark-mode .hamburger-inner, 
+    body.dark-mode .hamburger-inner::before, 
+    body.dark-mode .hamburger-inner::after {
+        background: #fff;
+        -webkit-transition: .3s ease;
+        -o-transition: .3s ease;
+        transition: .3s ease;
+    }
+    
+    body.dark-mode .hamburger.is-active .hamburger-inner::after,
+    body.dark-mode .hamburger.is-active .hamburger-inner::before {
+        background: #fff;
+    }
+    
+    /* Body and Core Elements */
+    body.dark-mode {
+        background: var(--dark);
+    }
+    
+    body.dark-mode h2, body.dark-mode p {
+        color: #fff !important;
+        opacity: .9;
+    }
+    
+    body.dark-mode p {
+        opacity: .9;
+    }
+    
+    body.dark-mode h3 {
+        color: #3781b8;
+    }
+    
+    body.dark-mode .yellow-span {
+        color: #3781b8;
+    }
+    
+    /*-- -------------------------- -->
+    <---          LANDING           -->
+    <--- -------------------------- -*/
+
+    body {
+        position: relative;
+    }
+
+    body.dark-mode {
+        background: none;
+    }
+
+    body.dark-mode:before {
+        background: url("../images/night-sky.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        content: '';
+        position: fixed;
+        display: block;
+        width: 100%;
+        opacity: 1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+    
+    body.dark-mode .big-circle,
+    body.dark-mode .little-circle,
+    body.dark-mode .little-circle:after {
+        background: var(--dark);
+    }
+    
+    body.dark-mode #home-h {
+        color: #fff;
+    }
+
+    body.dark-mode .heroText .button-solid {
+        background: #4a5e42;
+        color: #fff;
+    }
+
+    /*-- -------------------------- -->
+    <---            About           -->
+    <--- -------------------------- -*/
+
+    body.dark-mode #about:before {
+        display: none !important;
+    }
+
+    body.dark-mode #about:after {
+        display: block !important;
+    }
+
+    body.dark-mode .arrow:before {
+        background: url("../images/button-back-dark.png");
+	    background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    body.dark-mode .quote-block .bar {
+        background: #4a5e42;
+    }
+
+    body.dark-mode .quote-block .left:after {
+        background: #4a5e42;
+    }
+
+    body.dark-mode .quote-block .left:before {
+        background: #4a5e42;
+    }
+
+    body.dark-mode .quote-block .right:after {
+        background: #4a5e42;
+    }
+
+    body.dark-mode .quote-block .right:before {
+        background: #4a5e42;
+    }
+
+    body.dark-mode .quote-block a {
+        background: #4a5e42;
+    }
+
+    body.dark-mode .quote-block h2:before {
+        background: url("/images/mountain-dark.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    /*-- -------------------------- -->
+    <---          Benefits          -->
+    <--- -------------------------- -*/
+
+    body.dark-mode #benefits .b-left:before {
+        background: #4a5e42;
+    }
+
+    body.dark-mode #benefits ul li {
+        color: #fff;
+    }
+
+    /*-- -------------------------- -->
+    <---           Tagline          -->
+    <--- -------------------------- -*/
+
+    body.dark-mode #tagline:before {
+        background: #000;
+    }
+
+    body.dark-mode .button-transparent:hover {
+        background: #4a5e42;
+        color: #fff;
+    }
+
+    /*-- -------------------------- -->
+    <---         Philosophy         -->
+    <--- -------------------------- -*/
+
+    body.dark-mode #philosophy .sheild::before {
+        opacity: .8;
+    }
+
+    /*-- -------------------------- -->
+    <---           Footer           -->
+    <--- -------------------------- -*/
+
+    body.dark-mode #footer .footer-right {
+        background: #4a5e42;
+    }
+
+    body.dark-mode #footer .footer-right a {
+        color: #4a5e42;
+    }
+
+    body.dark-mode #footer .footer-left {
+        background: url("../images/footer-left-dark.jpg");
+	    background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    /*-- -------------------------- -->
+    <---         ABOUT PAGE         -->
+    <--- -------------------------- -*/
+
+    body.dark-mode #our-story .number-item h4 {
+        color: #fff;
+    }
+
+    body.dark-mode .about-page #qualities {
+        background: transparent;
+    }
+
+    body.dark-mode .about-page #qualities::before {
+        display: none;
+    }
+
+    body.dark-mode #contact-strip {
+        background: #4a5e42;
+    }
+
+    body.dark-mode #footer {
+        background: #111;
+    }
+}
+
+/* Tablets */
+@media screen and (min-width: 768px) {
+
+
+}
+
+/* Small Desktop */
+@media screen and (min-width: 1024px) {
+
+    body.dark-mode:before {
+        display: none;
+    }
+
+    body.dark-mode {
+        background: url("../images/night-desktop.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    body.dark-mode #dark {
+        opacity: .6;
+    }
+
+    body.dark-mode .navbar-menu {
+        overflow: visible;
+    }
+
+    body.dark-mode:before {
+        background: var(--dark);
+    }
+    
+    .top-dark-mode-button {
+        position: absolute;
+        left: 50%;
+        margin-left: 250px;
+        top: 17px;
+        right: auto;
+        -webkit-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+                transform: rotate(-90deg);
+        z-index: 5000;
+    }
+
+    .top-dark-mode-button:after {
+        color: #fff;
+    }
+
+    body.dark-mode .navbar-menu:before {
+        background: var(--dark);
+    }
+
+    body.dark-mode .navbar-menu {
+        -webkit-box-shadow: none;
+                box-shadow: none;
+        background: transparent;
+    }
+
+    body.dark-mode #about:after {
+        display: block !important;
+        height: 400px;
+    }
+
+    body.dark-mode .schedule a {
+        color: var(--dark);
+    }
+
+    body.dark-mode .split .right .one {
+        border-bottom: 13px solid var(--dark);
+    }
+
+    body.dark-mode #process .card:before {
+        background: var(--medium);
+    }
+
+    body.dark-mode #process .card .green {
+        background: #1c4a49;
+    }
+
+    body.dark-mode #portfolio .line:before {
+        background: #1c4a49;
+    }
+
+    body.dark-mode #portfolio:before {
+        background: #1c4a49;
+    }
+}
+
+/* Intermediate Desktop */
+@media screen and (min-width: 1200px) {
+    
+}
+
+/* Regular Desktop */
+@media screen and (min-width: 1500px) {
+    body.dark-mode .split .right .one {
+        border-bottom: none;
+    }
+}
